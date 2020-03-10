@@ -1,0 +1,32 @@
+{% extends "tee/base.html" %}
+
+{% load i18n %}
+
+{% load bootstrap4 %}
+{% bootstrap_css %}
+{% bootstrap_javascript jquery='full' %}
+{% bootstrap_messages %}
+
+{% block head_title %}{% trans "Signup" %}{% endblock %}
+
+{% block content %}
+<h4 align="center">{% trans "Sign Up" %}</h4>
+
+<p class="text-center">Already have an account? Then please <a href="{% url 'tee:login' %}">sign in</a></p>
+
+<form class="signup" id="signup_form" method="post" action="{% url 'tee:signup' %}">
+  <div class="container center_div">
+    <div class="col-9">
+  {% csrf_token %}
+  {% bootstrap_form form %}
+  {% if redirect_field_value %}
+  <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+  {% endif %}
+  {% buttons %}
+  <button type="submit" class="btn btn-primary">{% trans "Sign Up" %} &raquo;</button>
+  {% endbuttons %}
+    </div>
+  </div>
+</form>
+
+{% endblock %}

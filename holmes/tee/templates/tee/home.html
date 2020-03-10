@@ -1,0 +1,72 @@
+{% extends "tee/base.html" %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  {% load static %}
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <script type="text/javascript" src="{% static 'tee/js/jquery.js' %}"></script>
+  <script type="text/javascript" src="{% static 'tee/js/bootstrap.min.js' %}"></script>
+  <script type="text/javascript" language="javascript">
+      $(document).ready(function(){
+	    $(".carousel").carousel({
+	     interval:3000
+	  })
+	  });
+   </script>
+</head>
+<body>
+  <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+  <ol class="carousel-indicators">
+  <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+  <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+  <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+  </ol>
+  <div class="carousel-inner" role="listbox" style="width:100%; height:300px ;">
+  <div class="carousel-item active">
+  <img class="d-block w-100" src="{% static 'tee/picture/me.jpg' %}" alt="First slide">
+  </div>
+  <div class="carousel-item ">
+  <img class="d-block w-100" src=" {% static 'tee/picture/vision.jpg' %}" alt="Second slide">
+  </div>
+  <div class="carousel-item">
+  <img class="d-block w-100" src=" {% static 'tee/picture/values.jpg' %}" alt="Third slide">
+  </div>
+  </div>
+  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+  <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="carouselExampleIndicators" role="button" data-slide="next">
+  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+  <span class="sr-only">Next</span>
+  </a>
+  </div>
+  <br>
+<div class="d-flex bd-highlight">
+<div class="p-2 flex-fill bd-highlight">
+	<a href="{% url 'tee:career' %}">  
+ <img src="{% static 'tee/picture/vision.jpg' %}" alt="Second slide" style="width:300px; height:300px;">
+ </a>
+  <h3>Careers</h3>
+  <p>check out our career page</p>
+ </div>
+<div class="p-2 flex-fill bd-highlight">
+   <a href="{% url 'tee:about' %}">	  
+   <img src="{% static 'tee/picture/pic.jpg' %}" alt="Second slide" style="width:300px; height:300px;">
+    </a>
+     <h3>About Us</h3>
+  <p>get to know us</p>	
+   </div>
+  <div class="p-2 flex-fill bd-highlight">
+     <a href="{% url 'andablog:entrylist' %}">		  
+    <img src="{% static 'tee/picture/values.jpg' %}" alt="Second slide" style="width:300px; height:300px;">
+     </a>
+     <h3>Blog Page</h3>
+     <p>see latest news and information</p>	
+	  </div>
+  </div>
+  </body>
+  </html>
+  {% endblock %}

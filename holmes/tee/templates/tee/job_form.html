@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+{% extends "tee/base.html"%}
+{% load bootstrap4 %}
+{% bootstrap_css %}
+{% bootstrap_javascript jquery='full' %}
+{% bootstrap_messages %}
+{% block content %}
+  <form method="post" enctype="multipart/form-data" class="form">
+    <div class="container center_div">
+      <div class="col-11">
+    {% csrf_token %}
+  {% bootstrap_form form %}
+  {% buttons %}
+  <button type="submit" class="btn btn-primary">
+    Submit Form
+  </button>
+  {% endbuttons %}
+      </div>
+    </div>
+  </form>
+ {% endblock %}

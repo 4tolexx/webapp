@@ -1,0 +1,27 @@
+
+{% extends "tee/base.html" %}
+{% block content %}
+  <h2>Prospective Employee Details</h2>
+   <p>Full Name: {{object.full_name}}</p>
+   <p>Gender: {{object.gender}}</p>
+   <p>Address: {{object.address}}</p>
+   <p>Phone No: {{object.phone_no}}</p>
+   <p>Email Address: {{object.email}}</p>
+   <img src="{{object.photo.url}}" height="20%" width="20%"></img>
+   <p>Educational Qualification: {{object.education}}</p>
+   <p>Subject Proficiency: {{object.subjects}}</p>
+   <p>Position Applied: {{object.position}}</p>
+   <p>Resume: {{object.resume}}</p>
+   <button type="submit">
+  <a href="{% url 'tee:job-update' pk=job.id %}">Update</a>
+</button>
+  {% if messages %}
+  <ul class="messages">
+    {% for message in messages %}
+	<li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message}}</li>
+	{% endfor %}
+	</ul>
+  {% endif %}
+  {% endblock %}
+
+

@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+{% load static %}
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" type="text/css" href="{% static 'tee/css/bootstrap.min.css' %}">
+  <script type="text/javascript" src="{% static 'tee/js/bootstrap.min.js' %}"></script>
+  <script type="text/javascript" src="{% static 'tee/js/jquery.min.js' %}"></script>
+  <script type="text/javascript" src="{% static 'tee/js/popper.min.js' %}"></script>
+  <title>{% block head_title %}{% endblock %}</title>
+    {% block extra_head %}
+    {% endblock %}
+</head>
+<body style="background:ivory;">
+<nav class="navbar navbar-expand-md navbar-light" style="background-color:#e3f2fd;">
+    <a href="{% url 'tee:home' %}" class="navbar-brand">
+        <img src="{% static 'tee/picture/pic.jpg' %}" height="28" alt="CoolBrand">
+    </a>
+    <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarNav" aria-contols="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <div class="navbar-nav">
+		    <a href="{% url 'tee:home' %}" class="nav-item nav-link active">Home<span class="sr-only">(current)</span></a>
+			<a href="{% url 'tee:about' %}" class="nav-item nav-link">About</a>
+            <a href="{% url 'tee:career' %}" class="nav-item nav-link">Careers</a>
+			<a href="{% url 'andablog:entrylist' %}" class="nav-item nav-link">Blog</a>
+		</div>
+	
+			<div class="navbar-nav ml-auto">
+               <a href="{% url 'tee:login' %}" class="nav-item nav-link">Login</a>
+               <a href="{% url 'tee:logout' %}" class="nav-item nav-link">Log Out</a>
+			   <a href="{% url 'tee:signup' %}" class="nav-item nav-link">Sign Up</a>
+			  </div>
+
+     </div>
+</nav>
+{% block body %}
+
+    {% if messages %}
+    <div>
+      <strong>Messages:</strong>
+      <ul>
+	{% for message in messages %}
+	<li>{{message}}</li>
+	{% endfor %}
+      </ul>
+    </div>
+    {% endif %}
+
+{% block content %}
+{% endblock %}
+{% endblock %}
+{% block extra_body %}
+{% endblock %}
+</body>
+</html>
