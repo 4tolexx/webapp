@@ -1,6 +1,8 @@
 {% extends "tee/base.html" %}
 
 {% load i18n %}
+
+{% load static %}
 {% load account socialaccount %}
 {% load bootstrap4 %}
 {% bootstrap_css %}
@@ -10,6 +12,9 @@
 {% block head_title %}{% trans "Sign In" %}{% endblock %}
 
 {% block content %}
+
+<script type="text/javascript" src="{% static 'tee/js/jquery.js' %}"></script>
+<script type="text/javascript" src="{% static 'tee/js/bootstrap.min.js' %}"></script>
 
 <h4>{% trans "Sign In" %}</h4>
 

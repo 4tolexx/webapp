@@ -2,6 +2,7 @@
 
 {% load i18n %}
 
+{% load static %}
 {% load bootstrap4 %}
 {% bootstrap_css %}
 {% bootstrap_javascript jquery='full' %}
@@ -10,6 +11,9 @@
 {% block head_title %}{% trans "Sign Out" %}{% endblock %}
 
 {% block content %}
+
+<script type="text/javascript" src="{% static 'tee/js/jquery.js' %}"></script>
+<script type="text/javascript" src="{% static 'tee/js/bootstrap.min.js' %}"></script>
 <h4>{% trans "Sign Out" %}</h4>
 
 <p>{% trans 'Are you sure you want to sign out?' %}</p>

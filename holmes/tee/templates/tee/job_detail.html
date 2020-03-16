@@ -1,6 +1,8 @@
-
 {% extends "tee/base.html" %}
 {% block content %}
+{% load static %}
+<script type="text/javascript" src="{% static 'tee/js/jquery.js' %}"></script>
+<script type="text/javascript" src="{% static 'tee/js/bootstrap.min.js' %}"></script>
   <h2>Prospective Employee Details</h2>
    <p>Full Name: {{object.full_name}}</p>
    <p>Gender: {{object.gender}}</p>

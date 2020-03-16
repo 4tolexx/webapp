@@ -1,10 +1,14 @@
 <!DOCTYPE html>
 {% extends "tee/base.html"%}
+{% load static %}
 {% load bootstrap4 %}
 {% bootstrap_css %}
 {% bootstrap_javascript jquery='full' %}
 {% bootstrap_messages %}
 {% block content %}
+
+<script type="text/javascript" src="{% static 'tee/js/jquery.js' %}"></script>
+<script type="text/javascript" src="{% static 'tee/js/bootstrap.min.js' %}"></script>
   <form method="post" enctype="multipart/form-data" class="form">
     <div class="container center_div">
       <div class="col-11">
